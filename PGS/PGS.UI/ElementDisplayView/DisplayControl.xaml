@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="PGS.UI.DisplayControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PGS.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             Background="White"
+             MouseUp="MouseClick">
+    <ItemsControl DataContext="{Binding DisplayContext}" ItemsSource="{Binding Elements}" MouseUp="MouseClick">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <Canvas/>
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemContainerStyle>
+            <Style TargetType="ContentPresenter">
+                <Setter Property="Canvas.Left" Value="{Binding Path=XPos}"/>
+                <Setter Property="Canvas.Top" Value="{Binding Path=YPos}"/>
+                <Setter Property="Panel.ZIndex" Value="{Binding Path=ZIndex}"/>
+            </Style>
+        </ItemsControl.ItemContainerStyle>
+    </ItemsControl>
+</UserControl>

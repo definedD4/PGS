@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:PGS.UI">
+    <DataTemplate DataType="{x:Type local:AngleDisplay}">
+        <Canvas>
+            <Path Stroke="Black" StrokeThickness="1">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigure StartPoint="{Binding ArcStart}" IsClosed="False">
+                                <ArcSegment Point="{Binding ArcEnd}"
+                                        Size="{Binding ArcSize}" IsLargeArc="False"
+                                        SweepDirection="Clockwise"/>
+                            </PathFigure>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            <TextBlock Text="{Binding Label}" Canvas.Left="0" Canvas.Bottom="0"/>
+        </Canvas>
+    </DataTemplate>
+</ResourceDictionary>

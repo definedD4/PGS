@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:PGS.UI">
+    <DataTemplate DataType="{x:Type local:PointProperties}">
+        <Border VerticalAlignment="Stretch" BorderBrush="DarkGray" BorderThickness="1" Margin="6" MinWidth="140">
+            <StackPanel VerticalAlignment="Top">
+                <WrapPanel Margin="2">
+                    <TextBlock Text="Point" FontWeight="Bold" Margin="2"/>
+                    <TextBlock Text="{Binding Label}" Margin="2"/>
+                </WrapPanel>
+                <WrapPanel Margin="2">
+                    <StackPanel Orientation="Horizontal" Margin="2">
+                        <TextBlock Text="X:" Margin="2"/>
+                        <TextBlock Text="{Binding XPos}" Margin="2"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="2">
+                        <TextBlock Text="Y:" Margin="2"/>
+                        <TextBlock Text="{Binding YPos}" Margin="2"/>
+                    </StackPanel>
+                </WrapPanel>
+                <WrapPanel Margin="2">
+                    <TextBlock Text="Label:" Margin="2"/>
+                    <TextBox Text="{Binding Label, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2"/>
+                </WrapPanel>
+                <Button Content="Remove" Command="{Binding RemoveCmd}" Margin="2" HorizontalAlignment="Right"/>
+            </StackPanel>
+        </Border>
+    </DataTemplate>
+</ResourceDictionary>

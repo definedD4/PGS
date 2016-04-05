@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:PGS.UI"
+                    xmlns:ut="clr-namespace:PGS.Util;assembly=PGS.Util">
+    <DataTemplate DataType="{x:Type local:PointDisplay}">
+        <local:DisplayPointControl DataContext="{Binding}"/>
+    </DataTemplate>
+</ResourceDictionary>
